@@ -9,7 +9,7 @@
 
 An e-Commerce web app with laravel.
 
-(template mastering)
+Front end template mastering
 (e-commerce template from: /*
 A Design by W3Layouts
 Author: W3layouts
