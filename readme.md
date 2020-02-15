@@ -2,7 +2,7 @@
 
 An e-Commerce web app with laravel.
 
-Back end /login-> CRUD in category
+Back end /login-> CRUD in category without using packages
 
 Front end template mastering
 (e-commerce template from: /*
