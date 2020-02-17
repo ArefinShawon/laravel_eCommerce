@@ -20,7 +20,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-    @endif
+        @endif
     <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
@@ -60,6 +60,7 @@
                             </form>
                         </div>
                         <!-- /.card -->
+                        <a href="{{url('admin-category')}}" class="fa fa-arrow-circle-left"> Return to Category</a>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->

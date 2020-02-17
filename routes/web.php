@@ -26,3 +26,6 @@ Route::get('/published-category/{id}', 'CategoryController@publishCategory')->na
 Route::get('/edit-category/{id}', 'CategoryController@editCategory')->name('edit-category');
 Route::post('/update-category', 'CategoryController@updateCategory')->name('update-category');
 Route::get('/delete-category/{id}', 'CategoryController@deleteCategory')->name('delete-category');
+
+//Brand using resource
+Route::resource('brand', 'BrandController');

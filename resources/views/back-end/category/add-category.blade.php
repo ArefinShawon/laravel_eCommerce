@@ -60,7 +60,7 @@
                                 </div>
                             </form>
                         </div>
-                        <!-- /.card -->
+                        <a href="{{url('admin-category')}}" class="fa fa-arrow-circle-left"> Return to Category</a>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
