@@ -8,6 +8,7 @@ CRUD in category
 
 Brand using Laravel Collective package 
 
+product part- package used (Laravel Collective, ckeditor, intervention image)
 
 <b>Front end</b>
 
