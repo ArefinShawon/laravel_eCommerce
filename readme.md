@@ -2,12 +2,16 @@
 
 An e-Commerce web app with laravel.
 
-Back end-> CRUD in category
+<b>Back end</b>
 
-        -> Brand using Laravel Collective package 
+CRUD in category
+
+Brand using Laravel Collective package 
 
 
-Front end template mastering
+<b>Front end</b>
+
+template mastering
 (e-commerce template from: /*
 A Design by W3Layouts
 Author: W3layouts
