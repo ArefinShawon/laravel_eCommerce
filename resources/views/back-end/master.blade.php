@@ -45,6 +45,11 @@
 <script src="{{asset('backend-assets')}}/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('backend-assets')}}/dist/js/demo.js"></script>
+<!--ckeditor cdn-->
+<script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'long-description' );
+</script>
 <!-- page script -->
 <script>
     $(function () {

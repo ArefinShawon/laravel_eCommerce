@@ -31,3 +31,6 @@ Route::get('/delete-category/{id}', 'CategoryController@deleteCategory')->name('
 Route::resource('brand', 'BrandController');
 Route::get('/unpublished-brand/{id}', 'BrandController@unpublishBrand')->name('unpublished-brand');
 Route::get('/published-brand/{id}', 'BrandController@publishBrand')->name('published-brand');
+
+//Product
+Route::resource('product', 'ProductController');
