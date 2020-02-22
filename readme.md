@@ -3,6 +3,7 @@
 An e-Commerce web app with laravel.
 
 Back end-> CRUD in category
+
         -> Brand using Laravel Collective package 
 
 
