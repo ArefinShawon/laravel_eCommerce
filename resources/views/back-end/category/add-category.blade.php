@@ -41,19 +41,28 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label>Category Name</label>
-                                        <input type="text" class="form-control" name="cat_name" placeholder="Enter Category Name">
+                                        <input type="text" class="form-control @error('cat_name') is-invalid @enderror" name="cat_name" placeholder="Enter Category Name">
+                                        @error('cat_name')
+                                        <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label>Category Description</label>
-                                        <input type="text" class="form-control" name="cat_desc" placeholder="Enter Category Description">
+                                        <input type="text" class="form-control @error('cat_desc') is-invalid @enderror" name="cat_desc" placeholder="Enter Category Description">
+                                        @error('cat_desc')
+                                        <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group @error('status') is-invalid @enderror">
                                         <label>Publication Status</label>
                                         <select name="status" class="form-control">
                                             <option>--Select Publication Status--</option>
                                             <option value="1">Published</option>
                                             <option value="0">Unpublished</option>
                                         </select>
+                                        @error('status')
+                                        <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 <!-- /.card-body -->
                                     <button type="submit" class="btn btn-primary">Save Category</button>

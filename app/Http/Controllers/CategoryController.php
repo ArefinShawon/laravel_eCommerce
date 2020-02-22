@@ -20,16 +20,23 @@ class CategoryController extends Controller
     }
     public function saveCategory(Request $request){
 
+//        Validation
+        $request->validate([
+            'cat_name' => 'required|alpha',
+            'cat_desc' => 'required',
+            'status' => 'regex:/^([0-1]+)$/'
+        ]);
+
         //Elequent ORM System
         /********* For Small inputs ********/
-        Category::create($request->all());
+//        Category::create($request->all());
 
         /********** For large input + image *******/
-//        $category = new Category();
-//        $category->cat_name = $request->cat_name;
-//        $category->cat_desc = $request->cat_desc;
-//        $category->status = $request->status;
-//        $category->save();
+        $category = new Category();
+        $category->cat_name = $request->cat_name;
+        $category->cat_desc = $request->cat_desc;
+        $category->status = $request->status;
+        $category->save();
 
         //Query Builder
 //        DB::table('categories')->insert([

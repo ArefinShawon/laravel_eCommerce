@@ -1,7 +1,7 @@
 @extends('back-end.master')
 
 @section('title')
-    Admin Panel | Add Brand
+    Admin Panel | Edit Brand
 @endsection
 
 @section('body')
@@ -32,30 +32,33 @@
                         <!-- general form elements -->
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Add Brand</h3>
+                                <h3 class="card-title">Edit Brand</h3>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            {{ Form::open(['url' => 'brand','enctype'=>'multipart/form-data']) }}
+                            {{ Form::open(['url' => 'brand/'.$brand->id,'enctype'=>'multipart/form-data']) }}
+                            @method('put')
                             <div class="card-body">
                                 <div class="form-group">
-                                {{ Form::label('Brand Name') }}
-                                    {{ Form::text('brand_name','',['class'=>'form-control','placeholder'=>'Enter Brand name']) }}
+                                    {{ Form::label('Brand Name') }}
+                                    {{ Form::text('brand_name',$brand->brand_name,['class'=>'form-control','placeholder'=>'Enter Brand name']) }}
+                                    {{ Form::hidden('id',$brand->id,['class'=>'form-control']) }}
                                 </div>
                                 <div class="form-group">
-                                {{ Form::label('Brand Description') }}
-                                    {{ Form::text('brand_desc','',['class'=>'form-control','placeholder'=>'Enter brand description']) }}
+                                    {{ Form::label('Brand Description') }}
+                                    {{ Form::text('brand_desc',$brand->brand_desc,['class'=>'form-control','placeholder'=>'Enter brand description']) }}
                                 </div>
                                 <div class="form-group">
-                                {{ Form::label('Brand Image') }}
+                                    {{ Form::label('Brand Image') }}
                                     {{ Form::file('brand_image',['class'=>'form-control-file']) }}
+                                    <img src="{{ asset($brand->brand_image) }}" width="150" alt="">
                                 </div>
                                 <div class="form-group">
-                                {{ Form::label('Publication Status') }}
-                                    {{ Form::select('status',[''=>'--Select publication status--','1'=>'Published', '0'=>'Unpublished'],null,['class'=>'form-control']) }}
+                                    {{ Form::label('Publication Status') }}
+                                    {{ Form::select('status',[''=>'--Select publication status--','1'=>'Published', '0'=>'Unpublished'],$brand->status == 1? '1': '0',['class'=>'form-control']) }}
                                 </div>
                                 <div class="form-group">
-                                {{ Form::submit('Add Brand',['class'=>'btn btn-primary']) }}
+                                    {{ Form::submit('Update Brand',['class'=>'btn btn-primary']) }}
 
                                 </div>
                             </div>
