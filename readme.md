@@ -1,10 +1,17 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="200"></p>
+<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="150"></p>
 
 An e-Commerce web app with laravel.
 
-Back end /login-> CRUD in category without using packages
+<b>Back end</b>
 
-Front end template mastering
+CRUD in category
+
+Brand using Laravel Collective package 
+
+
+<b>Front end</b>
+
+template mastering
 (e-commerce template from: /*
 A Design by W3Layouts
 Author: W3layouts
