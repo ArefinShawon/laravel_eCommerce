@@ -34,3 +34,5 @@ Route::get('/published-brand/{id}', 'BrandController@publishBrand')->name('publi
 
 //Product
 Route::resource('product', 'ProductController');
+Route::get('/unpublished-product/{id}', 'ProductController@unpublishProduct')->name('unpublished-product');
+Route::get('/published-product/{id}', 'ProductController@publishProduct')->name('published-product');

@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->text('pro_short_desc');
             $table->text('pro_long_desc');
             $table->float('pro_price', 10,2);
-            $table->float('pro_discount',10,2);
+            $table->float('pro_discount',10,2)->nullable();
             $table->integer('pro_qty');
             $table->text('pro_image');
             $table->tinyInteger('status');

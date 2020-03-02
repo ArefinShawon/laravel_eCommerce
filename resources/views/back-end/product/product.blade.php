@@ -10,9 +10,9 @@
                 @if(Session::get('message'))
                     <div class="alert alert-default-success">
                         <h6>{{Session::get('message')}}</h6>
-                        {{--                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">--}}
-                        {{--                            <span aria-hidden="true">&times;</span>--}}
-                        {{--                        </button>--}}
+{{--                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">--}}
+{{--                                                    <span aria-hidden="true">&times;</span>--}}
+{{--                                                </button>--}}
                     </div>
                 @endif
             </div><!-- /.container-fluid -->
@@ -27,7 +27,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Product</h3>
+                    <h3 class="card-title">Products</h3>
                     <a href="{{url('product/create')}}" class="btn btn-outline-primary float-right" alt="Add Category"><i class="fa fa-plus"></i></a>
                 </div>
                 <!-- /.card-header -->
@@ -50,19 +50,22 @@
                         @foreach($products as $product)
                             <tr>
                                 <td>{{$i++}}</td>
-                                <td>{{$product->cat_id}}</td>
-                                <td>{{$product->brand_id}}</td>
+                                <td>{{$product->categories->cat_name}}</td>
+                                <td>{{$product->brands->brand_name}}</td>
                                 <td>{{$product->pro_name}}</td>
                                 <td><img src="{{asset($product->pro_image)}}" alt="" height="50"></td>
                                 <td>{{$product->pro_price}}</td>
                                 <td>{{$product->status == 1? 'Published':'Unpublished'}}</td>
                                 <td>
+                                    <a href="{{ url('product/'.$product->id) }}" class="btn btn-sm btn-outline-secondary">
+                                        <i class="fa fa-search-plus"></i>
+                                    </a>
                                     @if($product->status == 1)
-                                        <a href="{{route('unpublished-brand',['id'=>$product->id])}}" class="btn btn-sm btn-info" onclick="return confirm('Do you really want to change to Unpublish?')">
+                                        <a href="{{route('unpublished-product',['id'=>$product->id])}}" class="btn btn-sm btn-info" onclick="return confirm('Do you really want to change to Unpublish?')">
                                             <i class="fa fa-arrow-up"></i>
                                         </a>
                                     @else
-                                        <a href="{{route('published-brand',['id'=>$product->id])}}" class="btn btn-sm btn-warning" onclick="return confirm('Do you really want to change to Publish?')">
+                                        <a href="{{route('published-product',['id'=>$product->id])}}" class="btn btn-sm btn-warning" onclick="return confirm('Do you really want to change to Publish?')">
                                             <i class="fa fa-arrow-down"></i>
                                         </a>
                                     @endif

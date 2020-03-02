@@ -6,6 +6,7 @@ use App\Brand;
 use App\Category;
 use App\Product;
 use App\ProductGallery;
+use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,18 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+//        $products = Product::all();
+
+        /* ************Query Builder ************* */
+//        $products = DB::table('products')
+//            ->join('categories','categories.id','=','products.cat_id')
+//            ->join('brands','brands.id','=','products.brand_id')
+//            ->select('products.*','categories.cat_name','brands.brand_name')
+//            ->get();
+
+        $products = Product::with('categories','brands')->get();
+
+//        return $products;
         return view('back-end.product.product',[
             'products'=>$products
         ]);
@@ -88,9 +100,13 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        //
+        $product = Product::with('categories','brands', 'productGallery')->find($id);
+//        return $product;
+        return view('back-end.product.showProduct',[
+           'product'=>$product
+        ]);
     }
 
     /**
@@ -125,5 +141,18 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
+    }
+
+    public function unpublishProduct($id){
+        $product = Product::find($id);
+        $product->status=0;
+        $product->save();
+        return back()->with('message', 'Product: '. $product->pro_name.' is now changed to UNPUBLISHED status');
+    }
+    public function publishProduct($id){
+        $product = Product::find($id);
+        $product->status=1;
+        $product->save();
+        return back()->with('message', 'Product: '. $product->pro_name.' is now changed to PUBLISHED status');
     }
 }

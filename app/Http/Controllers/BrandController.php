@@ -124,6 +124,7 @@ class BrandController extends Controller
     public function destroy($id)
     {
         $brand = Brand::find($id);
+//        unlink($brand->brand_image);
         $brand -> delete();
         return back()->with('message','Brand: '. $brand->brand_name.' has been deleted');
     }

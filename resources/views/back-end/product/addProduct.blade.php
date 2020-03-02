@@ -83,7 +83,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Product Image</label>
-                                        <input type="file" class="form-control" name="pro_image">
+                                        <input type="file" class="form-control" name="pro_image" id="imgInp"><img id="blah" width="100">
                                     </div>
                                     <div class="form-group">
                                         <label>Gallery Image</label>
